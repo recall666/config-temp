@@ -1,7 +1,0 @@
-
-		location ~ /read-.+\.html$ {
-			rewrite_by_lua_block  {
-				local uri = ngx.re.sub(ngx.var.uri, "^/read-(.*)\\.html", "/read-post?id=$1", "o")
-				return ngx.redirect(uri)
-			}
-		}
